@@ -1,0 +1,38 @@
+<div class="container">
+  <form>
+    <br />
+    <div class="row">
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Seleccionar Tipo Usuario</span>
+          <select name="miselect" [(ngModel)]="tipUsuarioSelect" class="form-select" (change)="listaTipoUsuario()">
+            <option selected>----Selecionar----</option>
+            <option [value]="tipUser.codTipoUsuario" *ngFor="let tipUser of listTipoUsuario">{{tipUser.usuario}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Tipo Usuario</th>
+            <th>Fecha Registro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of listUsuarios">
+            <td>{{user.usuario}}</td>
+            <td>{{user.tipoUsuario}}</td>
+            <td>{{user.fechaRegistro}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </form>
+</div>
