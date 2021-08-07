@@ -33,7 +33,7 @@ public class UsuarioMSController {
 	public ResponseEntity<ClaveValorDto> guardarDatosUsuarioExterno(@RequestBody @Validated UsuarioExternoDocument externoDocument) throws Exception {
 
 		ClaveValorDto claveValorDto = new ClaveValorDto();
-		try { 
+		try {
 			this.iUsuarioExternoComponentRepository.save(externoDocument);
 			claveValorDto.setClave("true");
 			claveValorDto.setValor("Transaccion Exitosa");
